@@ -13,30 +13,30 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) #katalog projektu
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'b*qtw0f%f!d#%k#g(74#)n17+^m++09m3)v^z%f8uaxvpc=@*$'
+SECRET_KEY = 'jd%9$p0k6lk2!3^z$b^v29#qt)sww$crb_8=u+qju4sld7rl+v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True #Jeśli projekt jest rozwijany, to opcja ta jest ustawiona na True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [] # Jakie adresy internetowe mają dostęp do tej aplikcji
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.admin', #panel administracyjny
+    'django.contrib.auth',  #aplikacja zajmująca się autoryzacją użytkowników
+    'django.contrib.contenttypes', #umożliwia tworzenie relacji pomiędzy dowolnymi obiektami w bazie (innym niż w bazie danych)
+    'django.contrib.sessions', # odpowiedzialna za obsługę sesji, cookies
+    'django.contrib.messages', # służy do wyświetlania komunikatów dla użytkownika
+    'django.contrib.staticfiles', # służy do zarządzania plikami statycznymi np. layout
 ]
 
 MIDDLEWARE = [
@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'strona_zagle.urls'
+ROOT_URLCONF = 'strona_zagle.urls' #ścieżka do pliku opisującgo strukturę url
 
 TEMPLATES = [
     {
@@ -67,12 +67,12 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'strona_zagle.wsgi.application'
+WSGI_APPLICATION = 'strona_zagle.wsgi.application' # Co ma się stać kiedy uruchamiamy aplikacje w trybie serwerowym
 
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-
+# Konfiguracja bazy danych
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -103,18 +103,19 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pl' # kod języka w jakim strona ma się komunikować
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Warsaw' # strefa czasowa - UTC -> czas lokalny
 
-USE_I18N = True
+# Dwie zmienne, które odpowiadają za to, że nasz projetk będzie się komunikował w naszym języku
+USE_I18N = True # Internationalization - pomiędzy I a N jest 18 liter
 
-USE_L10N = True
+USE_L10N = True # localization
 
-USE_TZ = True
+USE_TZ = True # Use TimeZone - czy ma używać stref czasowych
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/' # Pod jakim adresem będą dostępne pliki statyczne
