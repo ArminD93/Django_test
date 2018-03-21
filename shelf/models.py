@@ -5,9 +5,9 @@ from django.db import models
 from django.db import models
 
 class Answer(models.Model):
-    answA = models.CharField(max_length=1)
-    answB = models.CharField(max_length=1)
-    answC = models.CharField(max_length=1)
+    answA = models.CharField(max_length=20)
+    answB = models.CharField(max_length=20)
+    answC = models.CharField(max_length=20)
     answCorrect = models.CharField(max_length=1)
 
 # Pomiędzy klasami mają być dwie linijki odstępu. 
