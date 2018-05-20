@@ -1,6 +1,6 @@
 from django.contrib import admin
 #Importowanie z modeli
-from .models import Question_Meteo, Answer_Meteo # Nigdy nie robić import * w Python!!
+from .models import Question_Meteo # Nigdy nie robić import * w Python!!
 # Register your models here.
 
 
