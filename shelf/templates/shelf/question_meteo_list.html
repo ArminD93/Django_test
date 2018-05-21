@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block 'content' %}
+
+Pytania z meteororologii
+
+<ul>
+    {% for Question_Meteo in object_list %}
+        <li>{{Question_Meteo.title}}</li>
+    {% endfor%}
+</ul>
+
+
+{% endblock %}
