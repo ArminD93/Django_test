@@ -1,0 +1,400 @@
+body
+{
+	background-color: #111b31;
+	color: #cad6cb;
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+	
+}
+
+
+.grid {
+	display: grid;
+	grid-template-columns: 2% 1fr 1fr 1fr 1fr 1fr 1fr 2%; /* 1 frame*/
+	grid-template-rows: 1fr;
+	grid-template-areas: 
+	 /*podajemy dwa razy title, bo wyżej jest 2 razy 1fr w columns -> dwie kolumny*/
+	". header header header header header header ." /* . oznacza puste pole*/
+	". title title title title title title ."
+	". menu menu menu menu menu menu ."
+	". budowa teoria article article article article ."
+	". przepisy meteo article article article article ."
+	". zaglowce testy article article article article ."
+	". footer footer footer footer footer footer.";
+	grid-gap: 10px;
+}
+
+.title {
+	grid-area: title;
+	background-color: rgb(16, 31, 63);
+	font-size: 40px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+}
+.header {
+	grid-area: header;
+}
+
+.header-wrapper {
+	width: 100%;
+	height: 400px;
+	position: relative;
+}
+
+.slide {
+	float: left;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: opacity 3s linear;
+}
+
+.header-wrapper > .slide:first-child {
+	opacity: 1;
+}
+
+
+
+.menu {
+	grid-area: menu;
+	background-color: rgb(11, 28, 59);;
+	
+
+}
+
+
+.footer {
+	grid-area: footer;
+
+	height: 20px;
+	background-color: rgb(16, 31, 63);
+	color: white;
+	line-height: 30px;
+	text-align: center;
+	margin: 15px 0;
+	font-size: 15px;
+}
+
+/* ################################## */
+.budowa {
+	grid-area: budowa;
+	
+}
+.teoria {
+	grid-area: teoria;
+	
+}
+.przepisy {
+	grid-area: przepisy;
+	
+}
+.meteo {
+	grid-area: meteo;
+	
+	
+}
+.zaglowce {
+	grid-area: zaglowce;
+	
+}
+.testy{
+	grid-area: testy;
+	
+}
+
+/* ################################## */
+
+
+ img /*Oznacza weź img, który jest w header*/
+{
+	width: 100%;  /*szerokość obrazka ma być zawsze 100%*/
+	
+} 
+
+.tile5
+{
+	
+	position: relative;
+	
+	width: 300px;
+	height: 300px;
+	background-color: rgb(16, 31, 63);
+	text-align: center;
+	transition-duration: 2s;
+}
+
+a.tilelink /*link dla kafelka*/
+{
+	color: #ffffff; /*biały kolor czcionki*/
+	text-decoration: none;/*usuwam podkreślenie, brak dekoracji tekstu, domyslnie jest underline czyli podkresl*/
+	display: block; /*wyświetlaj jako element blokowy, dzięki temu można określić wymiary bloku, ponieważ zachowuje się jak blok*/
+	
+}
+
+a.tilelinkhtml5 /*link dla kafelka*/
+{
+	color: #074e91; /*biały kolor czcionki*/
+	display: block;
+	font-size: 30px;
+	text-decoration: none;/*usuwam podkreślenie, brak dekoracji tekstu, domyslnie jest underline czyli podkresl*/
+	float: left;
+	margin: auto;
+	width: 100%;
+}
+
+#cf {
+	position:relative;
+	height:300px;
+	width:300px;
+	margin:0 auto;
+		
+  }
+  
+  #cf img {
+	position:absolute;
+	-webkit-transition: opacity 0,1s ease-in-out;
+	-moz-transition: opacity 0,1s ease-in-out;
+	-o-transition: opacity 0,1s ease-in-out;
+	transition: opacity 0,1s ease-in-out;
+	
+  }
+  
+  #cf .tile5:hover {
+	opacity: 0;
+  }
+
+
+article {
+	grid-area: article;
+	padding: 30px 30px;
+	background-color: #1c1d1f;
+	border-radius: 20%;	
+
+	display: grid;
+	grid-template-columns: 1fr 1fr; /* 1 frame*/
+	
+	grid-template-areas:
+	" text text img "
+	" text text text "	
+	" text text text ",
+	
+}
+
+
+
+.img {
+	height:100px;
+	width:100px;
+}
+
+
+article h1 {
+	font-size: 30px;
+	text-align: center;
+	margin: 1px 10% 50px 10%;
+	padding-bottom: 40x;
+	border-bottom: 2px solid yellowgreen;
+
+}
+
+article p {
+	text-align: justify; /*tekst wyjustowany*/
+	line-height: 20px;
+	font-size: 18px;
+	padding: 5px 0 5px 0;
+}
+#zegar
+{
+	float: right;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 20px;
+	
+	}
+
+.pic {
+	float: right;
+	margin:10px;
+	width: 25%;
+	border-radius: 50%;
+}
+
+
+#logo
+{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 30px;
+	
+}
+
+.flaticon-yachting {
+	float: left;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color:#111b31;
+    color: white;
+}
+
+.modal-body {
+	padding: 2px 16px;
+	background-color:#244997;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #111b31;
+    color: white;
+}
+.button{
+	
+
+	background-color: rgb(76, 76, 85);
+    
+    color: white;
+}
+
+
+@media screen and (max-width: 800px){
+	.grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr; /* 1 frame*/
+		grid-template-rows: auto;
+		grid-template-areas: 
+		"title title title" /*podajemy dwa razy title, bo wyżej jest 2 razy 1fr w columns -> dwie kolumny*/
+		"header header header" /* . oznacza puste pole*/
+		"menu menu menu"
+		"budowa teoria przepisy"
+		"meteo zaglowce testy"
+		"article article article"
+		"footer footer footer";
+		grid-gap: 1px;
+	}
+
+
+	.title {
+		grid-area: title;
+		background-color: rgb(16, 31, 63);
+		font-size:20px;
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		align-items: center;
+	}
+	
+
+	.tile5
+	{
+		
+		position: relative;
+		
+		width: 150px;
+		height: 150px;
+		background-color: rgb(16, 31, 63);
+		text-align: center;
+		transition-duration: 2s;
+	}
+	#cf {
+		position:relative;
+		height:150px;
+		width:150px;
+		margin:0 auto;
+			
+	  }
+	  a.tilelinkhtml5 /*link dla kafelka*/
+	  {
+		  color: #3350a0; /*biały kolor czcionki*/
+		  
+		  font-size: 15px;
+		  text-decoration: none;/*usuwam podkreślenie, brak dekoracji tekstu, domyslnie jest underline czyli podkresl*/
+		  margin: auto;
+		 
+	  }
+	  article {
+		margin-top: 30px;
+		margin-bottom: 20px;
+		padding: 30px 40px;
+		background-color: #1d1c1c;
+		border-radius: 20%;
+		align-self: center;
+		
+	}
+	
+	article h1 {
+		font-size: 20px;
+		text-align: center;
+		margin: 0 10% 30px 10px;
+		padding-bottom: 18x;
+		border-bottom: 2px solid rgb(29, 172, 16);
+	
+	}
+	
+	article p {
+		text-align: justify; /*tekst wyjustowany*/
+		line-height: 25px;
+		font-size: 16px;
+		padding: 15px 0 15px 0;
+	}
+
+	
+}
+	

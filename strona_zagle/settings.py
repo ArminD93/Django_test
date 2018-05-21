@@ -121,6 +121,13 @@ USE_TZ = True # Use TimeZone - czy ma używać stref czasowych
 
 STATIC_URL = '/static/' # Pod jakim adresem będą dostępne pliki statyczne
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    #'/var/www/static/',
+]
+
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

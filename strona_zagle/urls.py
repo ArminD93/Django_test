@@ -15,13 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^shelf/', include('shelf.urls') ),# Jeśli w linku zostanie wyłapane
+    re_path(r'^shelf/', include('shelf.urls',) ),# Jeśli w linku zostanie wyłapane
                                                             # wszystko zaczynające się od shelf/
                                                             #Każdą linijkę (re_path) w shelf.urls zacznie od ^shelf/
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
