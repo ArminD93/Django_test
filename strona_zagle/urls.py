@@ -23,9 +23,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^shelf/', include('shelf.urls',) ),# Jeśli w linku zostanie wyłapane
+    re_path(r'^shelf/', include('shelf.urls',)),# Jeśli w linku zostanie wyłapane
                                                             # wszystko zaczynające się od shelf/
                                                             #Każdą linijkę (re_path) w shelf.urls zacznie od ^shelf/
+    re_path(r'', include('shelf.urls',)),
 ]
 
 if settings.DEBUG:

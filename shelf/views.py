@@ -9,3 +9,6 @@ class Question_MeteoListView(ListView):
 
 class Question_MeteoDetailView(DetailView):
     model = Question_Meteo
+
+def index(request):
+    return render(request, template_name="base.html")
