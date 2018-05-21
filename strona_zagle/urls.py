@@ -14,12 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, re_path
+from django.urls import path, re_path, include
 
-from shelf.views import Question_MeteoListView 
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^question_meteo_list/$', Question_MeteoListView.as_view()),
+    re_path(r'^shelf/', include('shelf.urls') ),# Jeśli w linku zostanie wyłapane
+                                                            # wszystko zaczynające się od shelf/
+                                                            #Każdą linijkę (re_path) w shelf.urls zacznie od ^shelf/
 ]

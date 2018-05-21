@@ -6,3 +6,6 @@ from .models import Question_Meteo # Jeśli importujemy coś z submodułu, to od
 
 class Question_MeteoListView(ListView):
     model = Question_Meteo
+
+class Question_MeteoDetailView(DetailView):
+    model = Question_Meteo

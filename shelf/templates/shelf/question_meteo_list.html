@@ -6,7 +6,7 @@ Pytania z meteororologii
 
 <ul>
     {% for Question_Meteo in object_list %}
-        <li>{{Question_Meteo.title}}</li>
+        <li><a href="{% url 'Question_Meteo-detail' Question_Meteo.id %}">{{Question_Meteo.title}}</a></li>
     {% endfor%}
 </ul>
 
