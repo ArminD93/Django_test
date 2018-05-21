@@ -21,16 +21,16 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-		 <link rel="stylesheet" href="lightbox2-master/dist/css/lightbox.min.css">
+		 <link rel="stylesheet" href="/static/lightbox2-master/dist/css/lightbox.min.css">
 
 		<link rel="stylesheet" href="/static/css/style.css" type="text/css" />
 		<link rel="stylesheet" href="/static/css/fontello.css" type="text/css" />
 		<link rel="stylesheet" href="/static/css/flaticon.css" type="text/css" />
 
 		<!-- ################-->
-		<script src="timer.js"></script>
-		<script src="slider.js"></script>
-		<script src='https://www.google.com/recaptcha/api.js'></script>
+		<script src="/static/js/timer.js"></script>
+		<script src="/static/js/slider.js"></script>
+		<script src='/static/js/https://www.google.com/recaptcha/api.js'></script>
 		
 		
 	</head>
@@ -38,13 +38,7 @@
 	<body onload="odliczanie();">
 		<!--należy ustawić wywołanie funkcji odliczanie w sekcji body, onload - przy załadowaniu strony-->
 
-        {% block 'content' %}
-        {% endblock %}
-
-
-
-
-
+    
 		<div class="grid">
 			<div class="title">
 					<i class="flaticon-yachting" ></i>
@@ -58,12 +52,48 @@
 
 			<div class="header" id="main-slider"><!-- outermost container element -->
 					<div class="header-wrapper"><!-- innermost wrapper element -->
-							<img src=".\img\log2.jpg" alt="First" class="slide" /><!-- slides -->
-							<img src=".\img\2.jpg" alt="Second" class="slide" />
-							<img src=".\img\3.jpg" alt="Third" class="slide" />
-							<img src=".\img\5.png" alt="Third" class="slide" />
+							<img src="/static/img/log2.jpg" alt="First" class="slide" /><!-- slides -->
+							<img src="/static/img/2.jpg" alt="Second" class="slide" />
+							<img src="/static/img/3.jpg" alt="Third" class="slide" />
+							<img src="/static/img/5.png" alt="Third" class="slide" />
 					</div>
 			</div>	
+
+			<div class="menu">
+					
+				<nav class="navbar navbar-inverse">
+					<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="baricon-"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>                        
+						</button>
+						<a class="navbar-brand" href="index.php">Żeglarstwo</a>
+					</div>
+					<div class="collapse navbar-collapse" id="myNavbar">
+						<ul class="nav navbar-nav">
+						<li class="active"><a href="#">Home</a></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Inne <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+							
+							</ul>
+						</li>
+						<li><a href="#">O mnie</a></li>
+						<li><a href="#">Kontakt</a></li>
+						<li><a href="register.php">Zarejestruj</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+						<li><button id="myBtn" class="button">Zaloguj</button></li>
+						
+						
+						
+						</ul>
+					</div>
+					</div>
+			  </nav>
+				</div>
 
 
 
@@ -71,9 +101,10 @@
 				<article>
 
 							<div class="text">
-
+								{% block 'content' %}
+								{% endblock %}
 							
-									<h1> AKTUALNOŚCI  <img class="pic" src=".\img\boats-icon-png.png" alt="żaglówka" /> </h1>
+									<h1> AKTUALNOŚCI  <img class="pic" src="/static/img/boats-icon-png.png" alt="żaglówka" /> </h1>
 										
 										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non dui nibh. Mauris eget ex tempor,
 										aliquam ligula non, consectetur magna. Mauris mauris odio, vulputate sit amet egestas nec, vehicula sit amet magna.
@@ -104,6 +135,8 @@
 										libero interdum quis. Fusce vitae eleifend lectus. Sed nec ipsum commodo metus porttitor consectetur.</p>
 
 							</div>
+
+							
 		
 				
 				</article>
@@ -115,7 +148,7 @@
 				<div class="budowa">
 					<a href="budowa_jachtu.php" class="tilelinkhtml5">
 						<div id="cf">
-							<img class="bottom" src=".\img\zaglowka.jpg" alt=Żeglarstwo/>
+							<img class="bottom" src="/static/img/zaglowka.jpg" alt=Żeglarstwo/>
 							<div class="tile5">
 								<class="top" i class="flaticon-improvement">
 									</i>
@@ -127,7 +160,7 @@
 				<div class="teoria">
 					<a href="teoria_zeglowania.php" class="tilelinkhtml5">
 						<div id="cf">
-							<img class="bottom" src=".\img\Boat.jpg" alt=Żeglarstwo/>
+							<img class="bottom" src="/static/img/\Boat.jpg" alt=Żeglarstwo/>
 							<div class="tile5">
 								<i class="icon-book"></i>
 								<br />Teoria żeglowania
@@ -139,7 +172,7 @@
 				<div class="przepisy">
 					<a href="przepisy.php" class="tilelinkhtml5">
 						<div id="cf">
-							<img class="bottom" src=".\img\unnamed.png" alt=Żeglarstwo/>
+							<img class="bottom" src="/static/img/unnamed.png" alt=Żeglarstwo/>
 							<div class="tile5">
 								<class="top" i class="flaticon-lighttower-with-light">
 									</i>
@@ -151,7 +184,7 @@
 				<div class="meteo">
 					<a href="meteorologia.php" class="tilelinkhtml5">
 						<div id="cf">
-							<img class="bottom" src=".\img\sea-storm1.jpg" alt=Żeglarstwo/>
+							<img class="bottom" src="/static/img/sea-storm1.jpg" alt=Żeglarstwo/>
 							<div class="tile5">
 								<i class="demo-icon icon-cloud-sun"></i>
 								<br />Meteorologia
@@ -162,7 +195,7 @@
 				<div class="zaglowce">
 					<a href="zaglowce.php" class="tilelinkhtml5">
 						<div id="cf">
-							<img class="bottom" src=".\img\tall-ships.jpg" alt=Żaglowce/>
+							<img class="bottom" src="/static/img/tall-ships.jpg" alt=Żaglowce/>
 							<div class="tile5">
 								<i class="flaticon-old-ship"></i>
 								<br />Żaglowce
@@ -173,7 +206,7 @@
 				<div class="testy">
 					<a href="testy.php" class="tilelinkhtml5">
 						<div id="cf">
-							<img class="bottom" src=".\img\IMG_7802.jpg" alt=Żaglowce/>
+							<img class="bottom" src="/static/img/IMG_7802.jpg" alt=Żaglowce/>
 							<div class="tile5">
 								<i class="icon-edit"></i>
 								<br />Testy
@@ -185,7 +218,7 @@
 			
 
 			<div class="footer">
-				<footer>&copy; Armin Derencz</footer>
+				<footer>2018 &copy; Armin Derencz</footer>
 			</div>
 
 			
