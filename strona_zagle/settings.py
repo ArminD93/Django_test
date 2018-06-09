@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages', # służy do wyświetlania komunikatów dla użytkownika
     'django.contrib.staticfiles', # służy do zarządzania plikami statycznymi np. layout
     'shelf', # Aby dodać coś do bazy danych, należy tutaj dopisać utworzoną aplikację.
+    'podstrony',
 ]
 
 MIDDLEWARE = [

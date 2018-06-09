@@ -174,7 +174,7 @@ article {
 	border-radius: 20%;	
 
 	display: grid;
-	grid-template-columns: 1fr 1fr; /* 1 frame*/
+	grid-template-columns: 1fr; /* 1 frame*/
 	
 	grid-template-areas:
 	" text text img "

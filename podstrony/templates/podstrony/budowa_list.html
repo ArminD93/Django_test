@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block 'content' %}
+
+Budowa
+
+<ul>
+    {% for Budowa in object_list %}
+        <li><a href="{% url 'Budowa-detail' Budowa.id %}">{{Budowa.headline}}</a></li>
+    {% endfor%}
+</ul>
+
+
+{% endblock %}
+
+

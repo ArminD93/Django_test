@@ -27,6 +27,7 @@ urlpatterns = [
                                                             # wszystko zaczynające się od shelf/
                                                             #Każdą linijkę (re_path) w shelf.urls zacznie od ^shelf/
     re_path(r'', include('shelf.urls',)),
+    re_path(r'', include('podstrony.urls',)),
 ]
 
 if settings.DEBUG:

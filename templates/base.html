@@ -77,8 +77,7 @@
 						<li class="dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Inne <span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								{% block 'content' %}
-								{% endblock %}
+								
 							</ul>
 						</li>
 						<li><a href="#">O mnie</a></li>
@@ -96,7 +95,7 @@
 			  </nav>
 				</div>
 
-
+				
 
 			
 				<article>
@@ -105,34 +104,12 @@
 								
 							
 									<h1> AKTUALNOŚCI  <img class="pic" src="/static/img/boats-icon-png.png" alt="żaglówka" /> </h1>
-										
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non dui nibh. Mauris eget ex tempor,
-										aliquam ligula non, consectetur magna. Mauris mauris odio, vulputate sit amet egestas nec, vehicula sit amet magna.
-										Fusce magna lectus, cursus non aliquet nec, euismod et nisi. Sed pulvinar lobortis pharetra. 
-										In nec neque eu ex mattis condimentum. Nulla eget enim vitae est pellentesque finibus. Duis elementum facilisis dignissim.
-										Quisque non sagittis leo. Donec maximus risus sit amet tellus pharetra, non finibus nisi vestibulum. 
-										Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-							
-										<p>Curabitur dignissim est libero, et pellentesque enim facilisis nec. In eget convallis nisl. Vestibulum sed urna semper,
-										cursus sapien sed, tincidunt sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos 
-										himenaeos. Suspendisse pretium quis velit varius lacinia. Sed vel feugiat magna. Sed sodales pellentesque nisi. 
-										Cras ornare tortor magna, vitae maximus odio maximus at. Phasellus ultricies erat nec nisl pharetra tristique. 
-										Nulla convallis turpis id scelerisque sollicitudin. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-										per inceptos himenaeos. Fusce vel gravida lacus. Integer ac congue nulla, at luctus lorem. Morbi fermentum lorem ut mollis 
-										tempor.</p>
-
-										<p>Aliquam viverra neque in ipsum rhoncus, quis pulvinar mi aliquam. Etiam tristique nisl nec ante venenatis ultricies.
-										Aliquam quis urna sagittis, vulputate mauris at, cursus purus. Aliquam gravida consequat massa sit amet laoreet. 
-										Proin quis ullamcorper nisl. Nullam dictum eu felis ut posuere. Pellentesque tristique molestie scelerisque.
-										Etiam egestas mattis dui. Praesent id malesuada nisi. Sed eu quam risus. Nullam quis urna arcu. In hac habitasse 
-										platea dictumst. Nunc faucibus velit ex, nec suscipit lorem aliquam et. Aenean ornare mi odio, ut imperdiet enim 
-										fringilla ac. Sed sed nisl eu tellus convallis ornare ut at nunc. Nam id sollicitudin turpis, at facilisis turpis.</p>
-										
-										<p>Quisque risus nunc, imperdiet vitae venenatis sit amet, dictum in nibh. In interdum leo sit amet elit commodo,
-										a aliquam eros pharetra. Maecenas maximus eu lorem eget hendrerit. Donec nec pulvinar odio. Cras luctus hendrerit 
-										nunc, eu tempor magna eleifend vel. Aenean blandit pellentesque sem eget lobortis. Suspendisse potenti. 
-										Sed velit mauris, facilisis vel nulla eu, mollis pellentesque eros. Curabitur faucibus quam ante, vitae eleifend 
-										libero interdum quis. Fusce vitae eleifend lectus. Sed nec ipsum commodo metus porttitor consectetur.</p>
+									
+									{% block 'content' %}
+									{% endblock %}
+									
+									{% block 'budowa' %}
+									{% endblock %}
 
 							</div>
 
@@ -146,7 +123,7 @@
                     
 
 				<div class="budowa">
-					<a href="budowa_jachtu.php" class="tilelinkhtml5">
+					<a href="{% url 'Budowa-list'  %}" class="tilelinkhtml5">
 						<div id="cf">
 							<img class="bottom" src="/static/img/zaglowka.jpg" alt=Żeglarstwo/>
 							<div class="tile5">
@@ -158,7 +135,7 @@
 					</a>
 				</div>
 				<div class="teoria">
-					<a href="teoria_zeglowania.php" class="tilelinkhtml5">
+					<a href="" class="tilelinkhtml5">
 						<div id="cf">
 							<img class="bottom" src="/static/img/\Boat.jpg" alt=Żeglarstwo/>
 							<div class="tile5">
@@ -170,7 +147,7 @@
 
 				</div>
 				<div class="przepisy">
-					<a href="przepisy.php" class="tilelinkhtml5">
+					<a href="" class="tilelinkhtml5">
 						<div id="cf">
 							<img class="bottom" src="/static/img/unnamed.png" alt=Żeglarstwo/>
 							<div class="tile5">
@@ -182,7 +159,7 @@
 					</a>
 				</div>
 				<div class="meteo">
-					<a href="meteorologia.php" class="tilelinkhtml5">
+					<a href="" class="tilelinkhtml5">
 						<div id="cf">
 							<img class="bottom" src="/static/img/sea-storm1.jpg" alt=Żeglarstwo/>
 							<div class="tile5">
@@ -193,7 +170,7 @@
 					</a>
 				</div>
 				<div class="zaglowce">
-					<a href="zaglowce.php" class="tilelinkhtml5">
+					<a href="" class="tilelinkhtml5">
 						<div id="cf">
 							<img class="bottom" src="/static/img/tall-ships.jpg" alt=Żaglowce/>
 							<div class="tile5">
@@ -204,7 +181,7 @@
 					</a>
 				</div>
 				<div class="testy">
-					<a href="testy.php" class="tilelinkhtml5">
+					<a href="{% url 'Question_Meteo-list'%}" class="tilelinkhtml5">
 						<div id="cf">
 							<img class="bottom" src="/static/img/IMG_7802.jpg" alt=Żaglowce/>
 							<div class="tile5">
