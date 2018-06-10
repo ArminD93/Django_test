@@ -5,7 +5,10 @@
 <div class="container">
     <p> {{object.headline }} </p>
     <p> {{object.content }} </p>
-    <img src="{{object.img.url}}" width="240" >
+    <div id="budowa_obrazek">
+        <img src="{{object.img.url}}" width="240" >
+    </div>
+    
     <a href="{% url 'Budowa-list'%}"> Powrót </a>
 </div>
 

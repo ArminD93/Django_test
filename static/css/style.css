@@ -165,7 +165,11 @@ a.tilelinkhtml5 /*link dla kafelka*/
   #cf .tile5:hover {
 	opacity: 0;
   }
-
+ 
+  #budowa_obrazek {
+	height:600px;
+	width:600px;
+  }
 
 article {
 	grid-area: article;
