@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block 'content' %}
+
+Teoria żeglowania
+
+<ul>
+    {% for Teoria in object_list %}
+        <li><a href="{% url 'Teoria-detail' Teoria.id %}">{{Teoria.headline}}</a></li>
+    {% endfor%}
+</ul>
+
+{% endblock %}
+
+

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block 'content' %}
+
+ <center>Przepisy</center>
+
+<ul>
+    {% for Przepisy in object_list %}
+        <center><li><a href="{% url 'Przepisy-detail' Przepisy.id %}">{{Przepisy.headline}}</a></li></center>
+    {% endfor%}
+</ul>
+
+
+{% endblock %}
+
+

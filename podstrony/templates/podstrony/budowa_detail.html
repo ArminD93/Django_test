@@ -2,8 +2,13 @@
 
 {% block 'content' %}
 
-<div><a href="{% url 'Budowa-list'%}"> Powrót </a></div>
-{{object.content}}}
+<div class="container">
+    <p> {{object.headline }} </p>
+    <p> {{object.content }} </p>
+    <img src="{{object.img.url}}" width="240" >
+    <a href="{% url 'Budowa-list'%}"> Powrót </a>
+</div>
+
 
 {% endblock %}
 

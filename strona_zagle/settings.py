@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles', # służy do zarządzania plikami statycznymi np. layout
     'shelf', # Aby dodać coś do bazy danych, należy tutaj dopisać utworzoną aplikację.
     'podstrony',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -116,6 +117,7 @@ USE_L10N = True # localization
 
 USE_TZ = True # Use TimeZone - czy ma używać stref czasowych
 
+AUTH_USER_MODEL = 'users.Strona_ZagleUser' #nazwa aplikacji.nazwa modelu, który w tej aplikacji jest zdefiniowany.
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
@@ -128,6 +130,10 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'podstrony/media')
+
 
 TEMPLATES = [
     {

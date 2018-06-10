@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block 'content' %}
+
+<div class= "teoria"> 
+    <p>{{teoria.content|linebreaksbr}}</p>
+</div>
+
+<div><a href="{% url 'Teoria-list'%}"> Powrót </a></div>
+
+
+
+{% endblock %}
+
+
+
+
