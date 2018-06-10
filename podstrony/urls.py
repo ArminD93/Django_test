@@ -17,6 +17,7 @@ urlpatterns = [
     re_path(r'^przepisy/(?P<pk>\d+)/$', PrzepisyDetailView.as_view(), name='Przepisy-detail'),
 
     re_path(r'^przepisy/(?P<pk>\d+)/$', ImageDetailView.as_view(), name='Image-detail'),
+    
 
   
     

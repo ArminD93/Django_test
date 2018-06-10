@@ -44,3 +44,6 @@ class ImageListView(ListView):
 def index(request):
     return render(request, template_name="base.html")
 
+
+
+

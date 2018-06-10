@@ -2,16 +2,15 @@
 
 {% block content %}
 
-<div class= "teoria"> 
-    <p>{{teoria.content|linebreaksbr}}</p>
+<div class="container">
+    <p> {{object.headline }} </p>
+    <p> {{object.content }} </p>
+    <div id="budowa_obrazek">
+        <a href="{{object.img.url}}" data-lightbox="image1"><img src="{{object.img.url}}"></a>
+        
+    </div>
+    <a href="{% url 'Teoria-list'%}"> Powrót </a>
 </div>
-
-<div><a href="{% url 'Teoria-list'%}"> Powrót </a></div>
-
 
 
 {% endblock %}
-
-
-
-

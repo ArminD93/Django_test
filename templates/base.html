@@ -1,5 +1,5 @@
 <DOCTYPE !HTML>
-	
+		{% load staticfiles %}
 	<!-- linia informuje przeglądarkę, w której wersji html,  postanowilismy okodowac dokument  - HTML ozn, że w html 5-->
 	<html lang="pl">
 
@@ -24,6 +24,8 @@
 		<link rel="stylesheet" href="/static/css/style.css" type="text/css" />
 		<link rel="stylesheet" href="/static/css/fontello.css" type="text/css" />
 		<link rel="stylesheet" href="/static/css/flaticon.css" type="text/css" />
+
+		
 
 		<!-- ################-->
 
@@ -84,7 +86,9 @@
 						<li class="dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Inne <span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								
+									<li><a href="#">{{object.headline }}</a></li>
+									<li><a href="#">CSS</a></li>
+									<li><a href="#">JavaScript</a></li>
 							</ul>
 						</li>
 						<li><a href="#">O mnie</a></li>
@@ -93,8 +97,13 @@
 						<li><a href="{% url 'account_signup' %}">Zarejestruj</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
-						<li>{% if user.is_authenticated %} Witaj, {{user.username}}</li>
-						<li><a href="{% url 'account_logout' %}">Wyloguj się</a> {% else %}<a href="{% url 'account_login' %}">Zaloguj</a>{% endif %}</li>
+						<li><a href="#">{% if user.is_authenticated %} Witaj, {{user.username}}</a></li>
+						<li><a href="{% url 'admin:index' %}">Panel admina</a></li>
+						
+						<li><a href="{% url 'account_logout' %}">Wyloguj się</a></li>
+							 {% else %}
+						 <li><a href="{% url 'account_login' %}">Zaloguj</a></li>
+							{% endif %}
 						
 						
 						

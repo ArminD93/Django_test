@@ -8,7 +8,7 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    url('admin/', admin.site.urls),
+    url('admin/', admin.site.urls, ),
     url(r'^accounts/', include('allauth.urls')),
     re_path(r'^shelf/', include('shelf.urls',)),# Jeśli w linku zostanie wyłapane
                                                             # wszystko zaczynające się od shelf/
