@@ -6,9 +6,9 @@
     <p> {{object.headline }} </p>
     <p> {{object.content }} </p>
     <div id="budowa_obrazek">
-        <img src="{{object.img.url}}" width="240" >
+        <a href="{{object.img.url}}" data-lightbox="image1"><img src="{{object.img.url}}"></a>
+        
     </div>
-    
     <a href="{% url 'Budowa-list'%}"> Powrót </a>
 </div>
 

@@ -167,8 +167,8 @@ a.tilelinkhtml5 /*link dla kafelka*/
   }
  
   #budowa_obrazek {
-	height:600px;
-	width:600px;
+	height:500px;
+	width:500px;
   }
 
 article {
@@ -382,6 +382,11 @@ article p {
 		align-self: center;
 		
 	}
+
+	#budowa_obrazek {
+		height:300px;
+		width:300px;
+	  }
 	
 	article h1 {
 		font-size: 20px;
