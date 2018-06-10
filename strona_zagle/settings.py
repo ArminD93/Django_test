@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) #katalog projektu
 
@@ -37,10 +38,24 @@ INSTALLED_APPS = [
     'django.contrib.sessions', # odpowiedzialna za obsługę sesji, cookies
     'django.contrib.messages', # służy do wyświetlania komunikatów dla użytkownika
     'django.contrib.staticfiles', # służy do zarządzania plikami statycznymi np. layout
+    'django.contrib.sites',
+    ################################################
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    #'allauth.socialaccount.providers.facebook',
+    #'allauth.socialaccount.providers.google',
+
+
+    ################################################
     'shelf', # Aby dodać coś do bazy danych, należy tutaj dopisać utworzoną aplikację.
     'podstrony',
     'users',
 ]
+
+SITE_ID = 1 # because of 'django.contrib.sites'
+LOGIN_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -57,7 +72,7 @@ ROOT_URLCONF = 'strona_zagle.urls' #ścieżka do pliku opisującgo strukturę ur
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,"templates", "allauth")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -65,6 +80,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
             ],
         },
     },
@@ -117,7 +133,7 @@ USE_L10N = True # localization
 
 USE_TZ = True # Use TimeZone - czy ma używać stref czasowych
 
-AUTH_USER_MODEL = 'users.Strona_ZagleUser' #nazwa aplikacji.nazwa modelu, który w tej aplikacji jest zdefiniowany.
+AUTH_USER_MODEL = 'users.StronaZagleUser' #nazwa aplikacji.nazwa modelu, który w tej aplikacji jest zdefiniowany.
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
@@ -151,7 +167,22 @@ TEMPLATES = [
                 'django.template.context_processors.static',
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
+
+                
             ],
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+     # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+
+
+if DEBUG: #Kiedy jest włączony tryb debug, to mail jest wysyłany do konsoli
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
