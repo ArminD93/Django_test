@@ -5,7 +5,7 @@ chardet==3.0.4
 colorama==0.3.9
 decorator==4.3.0
 defusedxml==0.5.0
-Django==2.2.9
+Django==2.2.10
 django-allauth==0.36.0
 django-configurations==2.0
 idna==2.6
